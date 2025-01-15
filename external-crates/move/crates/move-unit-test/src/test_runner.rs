@@ -62,7 +62,7 @@ pub struct TestRunner {
 }
 
 /// Setup storage state with the set of modules that will be needed for all tests
-fn setup_test_storage<'a>(
+pub fn setup_test_storage<'a>(
     modules: impl Iterator<Item = &'a CompiledModule>,
     bytecode_deps_modules: impl Iterator<Item = &'a CompiledModule>,
 ) -> Result<InMemoryStorage> {

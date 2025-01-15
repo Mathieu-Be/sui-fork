@@ -108,7 +108,7 @@ pub fn run_move_unit_tests(
     })
 }
 
-fn new_testing_object_and_natives_cost_runtime(ext: &mut NativeContextExtensions) {
+pub fn new_testing_object_and_natives_cost_runtime(ext: &mut NativeContextExtensions) {
     // Use a throwaway metrics registry for testing.
     let registry = prometheus::Registry::new();
     let metrics = Arc::new(LimitsMetrics::new(&registry));

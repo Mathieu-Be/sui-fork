@@ -32,7 +32,7 @@ pub fn set_extension_hook(p: Box<dyn Fn(&mut NativeContextExtensions<'_>) + Send
 
 /// Create all available native context extensions.
 #[allow(unused_mut, clippy::let_and_return)]
-pub(crate) fn new_extensions<'a>() -> NativeContextExtensions<'a> {
+pub fn new_extensions<'a>() -> NativeContextExtensions<'a> {
     let mut e = NativeContextExtensions::default();
     if let Some(h) = &*EXTENSION_HOOK.lock().unwrap() {
         (*h)(&mut e)
